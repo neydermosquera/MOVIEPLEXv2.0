@@ -44,6 +44,10 @@
                 background-color: black;
                 align-content: center;
             }
+
+            .fondo{
+                border-radius: 5px;
+            }
           
         </style>
     </head>
@@ -91,7 +95,7 @@
             </div>
 
             <div class="col-9 contenido2">
-            <video src="{!! asset('media/welcome2.mp4') !!}" autoplay="true" muted="true" loop="true" style="width: 100%; height: 100%; margin: 0%;" class="img-responsive img-rounded" ></video>
+            <img src="{!! asset('images/inicio.png') !!}" alt="" width="100%" height="100%" class="fondo">
             </div>
 
             </div>

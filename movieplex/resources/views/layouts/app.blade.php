@@ -7,17 +7,32 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>MOVIEPLEX - LOGIN</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="icon" href="{!! asset('images/logo.png') !!}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        .fondo{
+            z-index: -1;
+            position: fixed;
+        }
+        section{
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
+    
+    <section>
+    
     <div id="app">
+        
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -58,7 +73,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Salir') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -71,10 +86,12 @@
                 </div>
             </div>
         </nav>
-
+        <img src="{!! asset('images/fondo.png') !!}" alt="" width="100%" height="120%" class="fondo">
         <main class="py-4">
             @yield('content')
         </main>
+        
     </div>
+    </section>
 </body>
 </html>
