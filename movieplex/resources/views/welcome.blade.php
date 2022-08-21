@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="/movieplex/images/icono.png">
+        <link rel="icon" href="{!! asset('images/logo.png') !!}">
 
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -24,33 +24,39 @@
             .tittle{
                 color: white;
                 font-size: xx-large;
-                background-color: #225E64;
+                background-color: #03989E;
+                
             }
 
             .btn{
-                margin: 10%;
+                margin-left: 15%;
+                margin-top: 10%;
                 width: 200px;
                 height: 200px;
+
             }
 
             .contenido1{
-                background-color: gray;
+                background-color: black;
             }
 
             .contenido2{
-                background-color: #225E64;
+                background-color: black;
+                align-content: center;
             }
           
         </style>
     </head>
 <body>
         <div class="contenido1">
-        <nav class="navbar bg-light">
-            <div class="container">
+        <nav class="navbar bg-black row">
+            <div class="container col-7">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+                <img src="{!! asset('images/iconoblanco.png') !!}" alt="" width="70" height="45" style="margin-left: 150%;">
                 </a>
             </div>
+            <div class="col-5" style="font-family: Century Gothic; font-size: x-large;">
+            
             </nav>
             <div class="row ">
             <div class="login col-3 contenido1">
@@ -85,7 +91,7 @@
             </div>
 
             <div class="col-9 contenido2">
-
+            <video src="{!! asset('media/welcome2.mp4') !!}" autoplay="true" muted="true" loop="true" style="width: 100%; height: 100%; margin: 0%;" class="img-responsive img-rounded" ></video>
             </div>
 
             </div>
