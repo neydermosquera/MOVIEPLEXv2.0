@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PeliculacarteleraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,5 @@ Route::get('/admin', [AdminController::class, 'index'])
 ->middleware('auth.admin')
 ->name('admin.index');
 
-Route::get('/agregarCartelera', [App\Http\Controllers\HomeController::class, 'agregarCartelera'])
-->name('agregarCartelera');
+
+Route::resource('peliculacarteleras', App\Http\Controllers\PeliculacarteleraController::class);

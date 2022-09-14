@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('peliculaCartelera', function (Blueprint $table) {
+        Schema::create('peliculaestrenos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('descripcion');
@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('duracion');
             $table->string('idioma');
             $table->string('imagen');
+            $table->time('updated_at');
+            $table->time('created_at');
         });
     }
 
