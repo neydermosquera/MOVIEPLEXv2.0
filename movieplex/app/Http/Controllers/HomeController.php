@@ -23,7 +23,11 @@ class HomeController extends Controller
             if(auth()->user()->role == 'admin'){
                 return view('homeAdmin');  
             } 
-        return view('home');
+        return view('homeCliente');
         }
+    }
+    
+    public function agregarCartelera(){
+        return view('agregarCartelera');
     }
 }

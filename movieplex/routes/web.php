@@ -25,3 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', [AdminController::class, 'index'])
 ->middleware('auth.admin')
 ->name('admin.index');
+
+Route::get('/agregarCartelera', [App\Http\Controllers\HomeController::class, 'agregarCartelera'])
+->name('agregarCartelera');
