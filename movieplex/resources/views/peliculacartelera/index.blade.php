@@ -13,13 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                <strong>{{ __('Películas en Cartelera') }}</strong>
-                                
+                               <h2>{{ __('Películas en Cartelera') }}</h2> 
                             </span>
 
-                             <div class="float-right">
-                                <a href="{{ route('peliculacarteleras.create') }}" class="btn btn-sm float-right"  style="background: #16A085; color:white" data-placement="left">
-                                  {{ __('Agregar nueva película') }}
+                            <div class="float-right">
+                                <a href="{{ route('peliculacarteleras.create') }}" class="btn btn-sm float-right" style="background: #16A085; color:white" data-placement="left">
+                                  {{ __('Agregar Película') }}
                                 </a>
                               </div>
                         </div>
@@ -37,13 +36,15 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Nombre</th>
-										<th>Descripción</th>
-										<th>Fecha</th>
+										<th>Name</th>
+										<th>Descripcion</th>
+										<th>Year</th>
 										<th>Reparto</th>
 										<th>Director</th>
-										<th>Duración</th>
+										<th>Duracion</th>
+										<th>Sala</th>
 										<th>Idioma</th>
+										<th>Genero</th>
 										<th>Imagen</th>
 
                                         <th></th>
@@ -60,12 +61,14 @@
 											<td>{{ $peliculacartelera->reparto }}</td>
 											<td>{{ $peliculacartelera->director }}</td>
 											<td>{{ $peliculacartelera->duracion }}</td>
+											<td>{{ $peliculacartelera->sala }}</td>
 											<td>{{ $peliculacartelera->idioma }}</td>
+											<td>{{ $peliculacartelera->genero }}</td>
 											<td>{{ $peliculacartelera->imagen }}</td>
 
                                             <td>
                                                 <form action="{{ route('peliculacarteleras.destroy',$peliculacartelera->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('peliculacarteleras.show',$peliculacartelera->id) }}"><i class="fa fa-fw fa-eye"></i> 
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('peliculacarteleras.show',$peliculacartelera->id) }}"><i class="fa fa-fw fa-eye"></i>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                                     <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
@@ -96,6 +99,5 @@
                 {!! $peliculacarteleras->links() !!}
             </div>
         </div>
-
     </div>
 @endsection

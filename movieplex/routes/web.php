@@ -31,3 +31,5 @@ Route::get('/admin', [AdminController::class, 'index'])
 Route::resource('peliculacarteleras', App\Http\Controllers\PeliculacarteleraController::class);
 
 Route::resource('peliculaestrenos', App\Http\Controllers\PeliculaestrenoController::class);
+
+Route::resource('salas', App\Http\Controllers\SalaController::class);

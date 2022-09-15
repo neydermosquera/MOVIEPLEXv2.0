@@ -1,4 +1,4 @@
-<div class="box box-info padding-1" style="width: 60%;">
+<div class="box box-info padding-1">
     <div class="box-body">
         
         <div class="form-group">
@@ -32,9 +32,19 @@
             {!! $errors->first('duracion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+            {{ Form::label('sala') }}
+            {{ Form::text('sala', $peliculacartelera->sala, ['class' => 'form-control' . ($errors->has('sala') ? ' is-invalid' : ''), 'placeholder' => 'Sala']) }}
+            {!! $errors->first('sala', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
             {{ Form::label('idioma') }}
             {{ Form::text('idioma', $peliculacartelera->idioma, ['class' => 'form-control' . ($errors->has('idioma') ? ' is-invalid' : ''), 'placeholder' => 'Idioma']) }}
             {!! $errors->first('idioma', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('genero') }}
+            {{ Form::text('genero', $peliculacartelera->genero, ['class' => 'form-control' . ($errors->has('genero') ? ' is-invalid' : ''), 'placeholder' => 'Genero']) }}
+            {!! $errors->first('genero', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('imagen') }}
@@ -42,7 +52,8 @@
             {!! $errors->first('imagen', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
-    </div> <br>
+    </div>
+    <br>
     <div class="row justify-content-center">
     
     <div class="float-right col-6">
@@ -59,5 +70,4 @@
     </div>
 
     </div>
-    
 </div>

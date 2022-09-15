@@ -16,15 +16,17 @@ return new class extends Migration
         Schema::create('peliculacarteleras', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('descripcion');
+            $table->mediumText('descripcion');
             $table->string('year');
             $table->string('reparto');
             $table->string('director');
             $table->string('duracion');
+            $table->string('sala');
             $table->string('idioma');
+            $table->string('genero');
             $table->string('imagen');
-            $table->time('updated_at');
-            $table->time('created_at');
+            $table->dateTime('updated_at');
+            $table->dateTime('created_at');
         });
     }
 
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelicula');
+        Schema::dropIfExists('peliculacarteleras');
     }
 };

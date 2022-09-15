@@ -13,18 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('peliculaestrenos', function (Blueprint $table) {
+        Schema::create('salas', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('descripcion');
-            $table->date('year');
-            $table->string('reparto');
-            $table->string('director');
-            $table->string('duracion');
-            $table->string('sala');
-            $table->string('idioma');
-            $table->string('genero');
-            $table->string('imagen');
+            $table->string('capacidad');
+            $table->time('horario1');
+            $table->time('horario2');
+            $table->time('horario3');
             $table->dateTime('updated_at');
             $table->dateTime('created_at');
         });
@@ -37,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peliculaestrenos');
+        Schema::dropIfExists('salas');
     }
 };

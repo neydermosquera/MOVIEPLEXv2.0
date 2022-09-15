@@ -48,7 +48,7 @@ class PeliculaestrenoController extends Controller
         $peliculaestreno = Peliculaestreno::create($request->all());
 
         return redirect()->route('peliculaestrenos.index')
-            ->with('success', 'Peliculaestreno created successfully.');
+            ->with('success', '¡Película agregada con éxito!');
     }
 
     /**
@@ -91,7 +91,7 @@ class PeliculaestrenoController extends Controller
         $peliculaestreno->update($request->all());
 
         return redirect()->route('peliculaestrenos.index')
-            ->with('success', 'Peliculaestreno updated successfully');
+            ->with('success', '¡Película actualizada con éxito!');
     }
 
     /**
@@ -104,6 +104,6 @@ class PeliculaestrenoController extends Controller
         $peliculaestreno = Peliculaestreno::find($id)->delete();
 
         return redirect()->route('peliculaestrenos.index')
-            ->with('success', 'Peliculaestreno deleted successfully');
+            ->with('success', '¡Película eliminada con éxito!');
     }
 }
