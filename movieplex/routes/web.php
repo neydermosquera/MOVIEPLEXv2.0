@@ -3,17 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PeliculacarteleraController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\CompraController;
+use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\UserController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,15 +15,22 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/admin', [AdminController::class, 'index'])
-->middleware('auth.admin')
-->name('admin.index');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
 Route::resource('peliculacarteleras', App\Http\Controllers\PeliculacarteleraController::class);
 
 Route::resource('peliculaestrenos', App\Http\Controllers\PeliculaestrenoController::class);
 
 Route::resource('salas', App\Http\Controllers\SalaController::class);
+
+Route::resource('cliente', App\Http\Controllers\clienteController::class);
+
+Route::get('cliente/estrenos', [App\Http\Controllers\clienteController::class, 'show']);
+
+Route::resource('compra', App\Http\Controllers\CompraController::class);
+
+Route::resource('users', App\Http\Controllers\UserController::class);
+
+
+
+

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\PeliculacarteleraController;
+use App\Peliculacartelera;
 
 class HomeController extends Controller
 {
@@ -20,14 +22,15 @@ class HomeController extends Controller
     public function index(){
        
         if(auth()->check()){
-            if(auth()->user()->role == 'admin'){
-                return view('homeAdmin');  
+            if(auth()->user()->role == null){
+                return redirect('/cliente');  
             } 
-        return view('homeCliente');
+
+            return view('homeAdmin');
         }
     }
     
-    public function agregarCartelera(){
-        return view('agregarCartelera');
-    }
+
+
+    
 }

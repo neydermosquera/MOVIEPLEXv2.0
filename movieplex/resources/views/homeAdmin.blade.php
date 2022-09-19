@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="container ">
+<div class="container " style="background-color: transparent;">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">{{ __('Bienvenido de nuevo Admin') }}</div>
+            <div class="card" style="background-color: transparent;">
+                <div class="card-header" >{{ __('Bienvenido de nuevo Admin') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    <H1 style="text-align: center;">¿Qué quieres hacer hoy?</H1> 
+                    <H1 style="text-align: center; color: white;">¿Qué quieres hacer hoy?</H1> 
 
                     <div class="botones">
                         <div class="row"> 

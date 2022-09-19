@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AdminAuth
+class ClienteAuth
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,7 @@ class AdminAuth
     {
 
         if(auth()->check()){
-            if(auth()->user()->role == 'admin'){
+            if(auth()->user()->role == null){
                 return $next($request);
             }
             

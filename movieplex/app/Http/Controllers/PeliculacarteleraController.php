@@ -43,12 +43,22 @@ class PeliculacarteleraController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
+
         request()->validate(Peliculacartelera::$rules);
 
-        $peliculacartelera = Peliculacartelera::create($request->all());
+        if ($request->hasFile('imagen')){
+            $destinationPath = 'images/portadas/';
+            $file = $request->file('imagen');
+            $filename = $file->getClientOriginalName();
+            $path = $request->file('imagen')->move($destinationPath, $filename);
+            $data['imagen'] = $destinationPath . $filename;
+        }
+
+        $peliculacartelera = Peliculacartelera::create($data);
 
         return redirect()->route('peliculacarteleras.index')
-            ->with('success', 'Peliculacartelera created successfully.');
+            ->with('success', 'Película agregada con éxito');
     }
 
     /**
@@ -91,7 +101,7 @@ class PeliculacarteleraController extends Controller
         $peliculacartelera->update($request->all());
 
         return redirect()->route('peliculacarteleras.index')
-            ->with('success', 'Peliculacartelera updated successfully');
+            ->with('success', 'Película actualizada con éxito');
     }
 
     /**
@@ -104,6 +114,6 @@ class PeliculacarteleraController extends Controller
         $peliculacartelera = Peliculacartelera::find($id)->delete();
 
         return redirect()->route('peliculacarteleras.index')
-            ->with('success', 'Peliculacartelera deleted successfully');
+            ->with('success', 'Película eliminada con éxito');
     }
 }

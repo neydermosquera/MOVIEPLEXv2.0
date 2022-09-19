@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Peliculacartelera</span>
+                        <h3 class="card-title">Agregar Película a Cartelera</h3>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('peliculacarteleras.store') }}"  role="form" enctype="multipart/form-data">

@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     {
         $user = new User;
         $user->name = 'Admin';
-        $user->email = 'admin@moviplex.com';
+        $user->email = 'admin@movieplex.com';
         $user->password = bcrypt('123456789');
         $user->role = 'admin';
 
