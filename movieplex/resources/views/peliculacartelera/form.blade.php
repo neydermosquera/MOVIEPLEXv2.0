@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('descripcion') }}
-            {{ Form::text('descripcion', $peliculacartelera->descripcion, ['class' => 'form-control' . ($errors->has('descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripcion']) }}
+            {{ Form::textarea('descripcion', $peliculacartelera->descripcion, ['class' => 'form-control' . ($errors->has('descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripcion']) }}
             {!! $errors->first('descripcion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

@@ -31,6 +31,8 @@ Route::resource('compra', App\Http\Controllers\CompraController::class);
 
 Route::resource('users', App\Http\Controllers\UserController::class);
 
+Route::get('/compra/pdf', [CompraController::class, 'createPDF']);
+
 
 
 

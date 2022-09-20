@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Peliculacartelera;
 use App\Sala;
+use PDF;
 use Illuminate\Http\Request;
 
 class CompraController extends Controller
@@ -18,4 +19,11 @@ class CompraController extends Controller
 
         return view('cliente.compra', compact('peliculacartelera', 'sala'));
     }
+
+    public function createPDF(){
+
+       
+    }
+
+
 }
